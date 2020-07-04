@@ -12,20 +12,20 @@ using System.Collections;
 using System.Collections.Generic;
 using AutoMapper;
 
-namespace API.Features.##Class##
+namespace API.Features._##Class##
 {
     public class Create
     {
         public class Command : IRequest<##Class##Dto>
         {
-            ##CSFieldList##
+##CSFieldListWithoutID##
         }
 
         public class CommandValidator : AbstractValidator<Command>
         {
             public CommandValidator()
             {
-                ##CSValidation##
+##CSValidation##
             }
         }
 
@@ -49,17 +49,17 @@ namespace API.Features.##Class##
 					##CSFieldAssign##                  
                 };
 
-                _context.##Class##s.Add(##Object##);
+        _context.##Class##s.Add(##Object##);
                 var success = await _context.SaveChangesAsync() > 0;
 
                 if (success)
                 {
-                    var toReturn = _mapper.Map<##Class##, ##Class##Dto>(##Object##);
+                    var toReturn = _mapper.Map <##Class##, ##Class##Dto>(##Object##);
                     return toReturn;
                 }                
 
                 throw new Exception("Problem saving changes");
-            }
+}
         }
     }
 }

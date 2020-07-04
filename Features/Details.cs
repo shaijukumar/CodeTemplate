@@ -8,16 +8,16 @@ using API.Model;
 using AutoMapper;
 using MediatR;
 
-namespace API.Features.##Class#
+namespace API.Features._##Class##
 {
     public class Details
-    { 
-        public class Query : IRequest<##Class#Dto>
+    {
+        public class Query : IRequest<##Class##Dto>
         {
             public Guid Id { get; set; }
         }
 
-        public class Handler : IRequestHandler<Query, ##Class#Dto>
+        public class Handler : IRequestHandler<Query, ##Class##Dto>
         {
             private readonly DataContext _context;
             private readonly IMapper _mapper;
@@ -27,18 +27,18 @@ namespace API.Features.##Class#
                 _context = context;
             }
 
-            public async Task<##Class#Dto> Handle(Query request, CancellationToken cancellationToken)
+            public async Task<##Class##Dto> Handle(Query request, CancellationToken cancellationToken)
             {
-                var ##Object## = await _context.Catalogs
+                var ##Object## = await _context.##Class##s
                     .FindAsync(request.Id);
 
                 if (##Object## == null)
                     throw new RestException(HttpStatusCode.NotFound, new { ##Class## = "Not found" });
 
-                var toReturn = _mapper.Map<##Class##, ##Class##Dto>(##Object##); 
+                var toReturn = _mapper.Map <##Class##, ##Class##Dto>(##Object##); 
 
                 return toReturn;
             }
-        }
     }
+}
 }

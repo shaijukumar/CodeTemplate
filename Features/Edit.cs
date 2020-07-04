@@ -13,7 +13,7 @@ using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Features.##Class##
+namespace API.Features._##Class##
 {
     public class Edit
     {

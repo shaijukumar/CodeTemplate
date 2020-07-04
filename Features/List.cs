@@ -10,7 +10,7 @@ using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace API.Features.##Class#
+namespace API.Features._##Class##
 {
     public class List
     {

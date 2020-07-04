@@ -7,7 +7,7 @@ using API.Errors;
 using API.Interfaces;
 using MediatR;
 
-namespace API.Features.##Class##
+namespace API.Features._##Class##
 {
     public class Delete
     {
