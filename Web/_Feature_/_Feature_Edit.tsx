@@ -35,7 +35,7 @@ const _Feature_ItemEdit: React.FC = () => {
   }, [loadItem, id]);
 
   const on_Feature_Submit = (values: any) => {
-    editItem(values).then((stockCat) => {
+    editItem(values).then((_FeatureObj_) => {
       set_Feature_(new _Feature_((_FeatureObj_ as any)));
     });
   };
@@ -56,8 +56,8 @@ const _Feature_ItemEdit: React.FC = () => {
       ##JSFormFields##
 
       <ButtonGroup>
-        <SubmitButton title={stockCat.Id === '' ? "Create" : "Update"} loader={submitting} />
-        {stockCat.Id && <AppButton title="Delete" onClick={() => onDelete()} loader={submitting} />}
+        <SubmitButton title={_FeatureObj_.Id === '' ? "Create" : "Update"} loader={submitting} />
+        {_FeatureObj_.Id && <AppButton title="Delete" onClick={() => onDelete()} loader={submitting} />}
         <AppButton title="Back" onClick={() => { history.push('/_Feature_List'); }} loader={submitting} />
       </ButtonGroup>
     </AppForm>
